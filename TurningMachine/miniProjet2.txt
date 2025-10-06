@@ -1,0 +1,7 @@
+bmr -> modele va recevoir les info calculer et apres via observateur prevenir qu il a change, 
+
+
+controler recevoir valeur et passer 
+
+
+VENDREDI PROCHAIN 27/10 23H59 remise mini projet 2

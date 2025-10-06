@@ -1,0 +1,139 @@
+QUESTION 1
+
+1. 
+(0.0,0.0)
+(2.0,2.0)
+
+2.
+pas d'erreur, car fichier porte le nom de la
+classe suivi de l’extension .java
+
+3.
+pas d'erreur
+
+QUESTION 2
+
+1.
+'x' has private access in 'td1.Point'
+
+2.
+(0.0, 0.0)
+méthode move(int, int)
+(2.0, 2.0)
+
+3.
+la methode est deja definie avec les memes attributs, surcharge impossible
+
+QUESTION 3
+1.
+Call to 'this()' must be first statement in constructor body
+
+2.
+
+dans TestPoint.java, à la ligne,Point p = new Point(); ,
+il n'y a plus de constructeur sans parametre pour pouvoir intialiser sans
+Quand on enleve tous les constructeurs il n'y a pas d'erreur car il y a des valeur de defaut pour x et y (0,0)
+Le code affiche:
+
+(0.0, 0.0)
+méthode move(int, int)
+(2.0, 2.0)
+
+3.
+
+(10.0, 10.0)
+méthode move(int, int)
+(12.0, 12.0)
+
+
+QUESTION 4
+
+1.
+Circle : [(0.0, 0.0), 5.0]
+Circle : [(2.0, 5.0), 5.0]
+Circle : [(2.0, 5.0), 10.0]
+
+2.
+une seule instance de la classe Point est créée, avec la déclaration Point p = new Point();
+Cette instance de Point est ensuite utilisée comme centre du cercle c
+
+QUESTION 5
+
+1.
+Circle : [(0.0, 0.0), 5.0]
+méthode move(int, int)
+Circle : [(2.0, 5.0), 5.0]
+méthode move(int, int)
+Circle : [(0.0, 0.0), 5.0]
+
+2.
+une seule instance de Point (référencée par p) et une seule instance de Circle (référencée par c) sont créées dans le programme.
+La variable p référence l'instance de Point.
+La variable p2 référence également l'instance de Point après avoir obtenu le centre du cercle (p2 = c.getCenter()).
+
+3.
+Circle : [(0.0, 0.0), 5.0]
+méthode move(int, int)
+Circle : [(0.0, 0.0), 5.0]
+méthode move(int, int)
+Circle : [(-2.0, -5.0), 5.0]
+
+4.
+Circle : [(0.0, 0.0), 5.0]
+méthode move(int, int)
+Circle : [(0.0, 0.0), 5.0]
+méthode move(int, int)
+Circle : [(0.0, 0.0), 5.0]
+
+5.
+Il y a toujours une instance de chaque
+La variable p référence toujours la même instance de la classe Point
+La variable p2 référence également la même instance de la classe Point après avoir obtenu le centre du cercle
+c.getCenter() renvoie une copie du centre d'origine de c, de sorte que les modifications apportées à p2 n'affectent pas le centre de c.
+
+
+QUESTION 6
+
+1.
+
+Rectangle : [(0.0, 0.0), (5.0, 3.0)]
+perimeter: 16.0
+Rectangle : [(2.0, 5.0), (7.0, 8.0)]
+perimeter: 16.0
+
+2.
+
+Deux instances de la classe Point sont créées :
+
+Point Object 1 avec les coordonnées (0, 0) est référencé par la variable bl.
+Point Object 2 avec les coordonnées (5, 3) est référencé par la variable ur.
+Une instance de la classe Rectangle est créée :
+
+Rectangle Object 1 est créé avec les points bl et ur et est référencé par la variable r.
+
+3.
+
+l'invariant n'est pas respecte
+
+Rectangle : [(0.0, 0.0), (5.0, 3.0)]
+perimeter: 16.0
+méthode move(int, int)
+Rectangle : [(12.0, 15.0), (7.0, 8.0)]
+perimeter: -24.0
+
+La valeur affichée du périmètre est -14.0
+
+Les coordonnées du point bl ne sont plus en bas et à gauche du point ur, ce qui enfreint l'invariant défini dans le constructeur de la classe Rectangle.
+
+Pour corriger, ajouter le code:
+// Addition copies defensives
+        this.bl = new Point(bottomLeft.getX(), bottomLeft.getY());
+        this.ur = new Point(upperRight.getX(), upperRight.getY());
+
+Le code affiche maintenant: 
+
+Rectangle : [(0.0, 0.0), (5.0, 3.0)]
+perimeter: 16.0
+méthode move(int, int)
+Rectangle : [(2.0, 5.0), (7.0, 8.0)]
+perimeter: 16.0

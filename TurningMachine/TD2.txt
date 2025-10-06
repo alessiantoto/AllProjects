@@ -1,0 +1,117 @@
+QUESTION 1
+
+1.
+
+(3.0, 6.0) - FF0000FF
+x: 3.0
+color : FF0000FF
+
+2.
+Cannot resolve method 'getColor' in 'Point', la ligne:
+System.out.println("color : " + String.format("%08X", p.getColor()));
+Si on commente, le probleme desparait.
+
+3.
+Vous pouvez utiliser un objet ColoredPoint là où un objet Point est attendu, car il bénéficie de l'héritage des attributs et méthodes de la classe parente Point.
+
+Cependant, l'inverse n'est pas vrai, car un Point n'a pas la couleur associée qui est spécifique à ColoredPoint
+
+4.
+non, 'x' et 'Y' ont un acces prive en'td2.Point'
+
+5.
+Cyclic inheritance involving 'td2.Point'
+
+6.
+Cannot inherit from final 'td2.Point'
+
+
+
+QUESTION 2
+
+1.
+OUI
+2.
+OUI
+3.
+Ca fonctionne car c'est defini dans Object, et ca implique une derivation implicite
+d'objet
+
+QUESTION 3
+
+1.
+super() doit être la première instruction dans le corps du constructeur 
+
+2.
+dans la classe Point, il n'y a pas de constructeur par defaut dans
+
+3.
+il n'y a plus car on a ajoute un constructeur par defaut
+
+QUESTION 4
+1.
+constructor of a
+constructor of b
+constructor of c
+
+2.
+
+constructor of a
+constructor of b
+
+3.
+
+constructor of a
+constructor of b
+constructor of c
+
+4.
+
+Chaque classe est une sous-classe de la classe Object.
+
+QUESTION 5
+1.
+(0.0 , 0.0) not pinned
+(1.0 , 1.0) pinned
+
+2.
+Cela s'applique à PinnablePoint, car le deuxième objet est déclaré comme PinnablePoint et utilise ainsi la méthode move de sa classe.
+
+3.
+Exception non gérée java.lang.exception
+
+4.
+Il est nécessaire de déclarer la méthode Exception. Cependant, lors de l'utilisation de IllegalStateException, il n'est pas nécessaire de déclarer explicitement l'exception.
+
+5.
+non
+6.
+oui, ca accepte l'expression
+
+7.
+Oui l'objet retourne n'est pas specifie c'est quoi
+
+8.
+attempting to assign weaker access privileges ('protected') was 'public
+
+9.
+Elle fait appel à la méthode move de la classe parent, qui est actuellement la classe Point.
+
+QUESTION 6
+(1.0,1.0)
+(3.0, 5.0) FF0000FF
+(2.0, 2.0) not pinned
+
+QUESTION 7
+
+1.
+on ne peut pas modifier protected dans cet endroit
+2.
+pour les membres de l'interface, public est redondant
+3.
+Point implemente Movable
+4.
+Meme que QUESTION 6
+
+
+

@@ -1,0 +1,90 @@
+QUESTION 1
+
+1.
+Cela affectera la taille de la fenêtre graphique qui s'ouvrira lorsque vous exécutez votre application JavaFX
+
+2.
+on ne voit plus la bare de navigation
+
+StageStyle.DECORATED - a stage with a solid white background and platform decorations.
+StageStyle.UNDECORATED - a stage with a solid white background and no decorations.
+StageStyle.TRANSPARENT - a stage with a transparent background and no decorations.
+StageStyle.UTILITY - a stage with a solid white background and minimal platform decorations.
+
+3.
+cela va placer le texte a la position mentionne
+
+4.
+
+// Appliquer un style CSS pour le soulignement du texte
+        helloText.setStyle("-fx-underline: true;");
+
+
+QUESTION 2
+
+1.
+
+La première est sélectionnée par défaut, la deuxième est indéterminée par défaut, et la troisième permet l'état indéterminé mais n'est pas initialement en cet état.
+
+2.
+
+les check box ne sont plus au centre vertical de la fenetre graphique
+
+
+QUESTION 3
+
+1.
+on ne voit plus ce qu'on ecrit
+
+2.
+ca affiche
+User name saved! You can’t change it
+
+QUESTION 4
+
+1.
+Le bouton "btnPrint" a un texte "Print" et un gestionnaire d'événements est attaché à ce bouton. Lorsque le bouton est cliqué, le texte contenu dans le TextArea "txaUserName" est imprimé sur la console.
+
+
+QUESTION 5
+
+1.
+getChildren() est une méthode essentielle pour la gestion de la structure hiérarchique dans JavaFX, ce qui est crucial pour la création et la manipulation d'interfaces graphiques.
+
+QUESTION 6
+
+1.
+Il faut juste remplacer hbox par vbox
+
+2.
+root.getChildren().addAll(checkBox1, checkBox2, checkBox3). Cela ajoute tous les CheckBox spécifiés en tant qu'arguments à la liste des enfants du HBox
+
+3.
+Cela signifie que si un enfant a une taille minimale (min size) qui le rend plus grand que ce que le VBox peut afficher, l'enfant peut déborder (dépasser) des bords du VBox.
+
+impact:
+-debordement visuel
+-mise en page inattendue
+
+methodes:
+1. setClip() : Vous pouvez utiliser la méthode setClip(Shape) pour définir une forme qui servira de masque pour les enfants du conteneur. Cela permet de délimiter visuellement les limites d'affichage des enfants.
+
+2. setClipToBounds() : Vous pouvez utiliser la méthode setClipToBounds(boolean) pour activer ou désactiver le "clip" pour le conteneur. Si vous définissez cette propriété sur true, le conteneur restreindra l'affichage de ses enfants à l'intérieur de ses limites. Sinon, les enfants pourront déborder.
+
+3. setMinSize() et setPrefSize() : Vous pouvez définir les propriétés minSize et prefSize de vos enfants de manière appropriée pour éviter qu'ils ne débordent du conteneur. Cela signifie que vous devez spécifier des tailles minimales et préférées qui permettent à l'enfant de s'ajuster correctement dans le conteneur.
+
+
+QUESTION 7
+
+1. Au sein d'un GridPane, lorsque vous placez plusieurs composants dans une même cellule, ils sont empilés les uns sur les autres. Cela signifie que les composants se superposent dans la même cellule du GridPane. Le composant qui est ajouté en dernier à la cellule se trouve au-dessus des autres, cachant partiellement ou totalement les composants précédents.
+
+2.
+Avec GridPane.setHalignment(lblPassword, HPos.RIGHT), le texte du label "Password" est aligné horizontalement à droite de la cellule, ce qui signifie qu'il est positionné sur la droite de la cellule du GridPane où il est placé.
+
+En revanche, si vous utilisez GridPane.setHalignment(lblPassword, HPos.CENTER), le texte du label "Password" sera aligné horizontalement au centre de la cellule. Cela signifie que le texte sera centré dans la cellule du GridPane.
+
+3.
+GridPane.setFillWidth(tfdPassword, true), le champ de texte tfdPassword essaiera de remplir toute la largeur disponible dans la cellule du `GridPane. Il s'étirera horizontalement pour occuper tout l'espace disponible dans la cellule.
+
+
+

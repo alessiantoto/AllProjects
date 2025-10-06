@@ -1,0 +1,74 @@
+1.
+required type: Integer
+provided: Double
+
+2.
+Integer(int) is deprecated and marked for removal
+
+3.
+required type: Box <Object>
+provided: Box <Integer>
+
+4.
+required type: Box <Object>
+provided: Box <Integer>
+Integer(int) is deprecated and marked for removal
+
+5.
+required type: Box <Object>
+provided: Box <Integer>
+Integer(int) is deprecated and marked for removal
+
+6.
+required type: capture of?
+provided: int
+
+7.
+cannot resolve method compareTo in T
+
+8.
+nous créons deux objets qui ne sont pas directement comparables avec le type T, donc
+
+Il génère une erreur de compilation car nous étendons une classe comparator qui a besoin de comparer deux nombres
+
+9.
+
+public static void main(String[] args) {
+        // Creation de deux listes avec des types différents
+        List<Object> destinationList = new ArrayList<>();
+        List<String> sourceList = new ArrayList<>();
+
+        // Ajout d'éléments à la liste source
+        sourceList.add("Premier");
+        sourceList.add("Deuxième");
+        sourceList.add("Troisième");
+
+        // Appel de la methode copy avec des types de listes différents
+        Collections.copy(destinationList, sourceList);
+
+        // Affichage du contenu de la liste de destination
+        System.out.println("Contenu de la liste de destination : " + destinationList);
+    }
+
+10.
+
+
+public static void main(String[] args) {
+        // Création d'une liste d'objets (dans ce cas, des chaînes de caractères)
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Orange");
+        stringList.add("Banana");
+        stringList.add("Apple");
+        stringList.add("Pear");
+
+        // Définition d'un comparateur pour le tri
+        Comparator<CharSequence> reverseComparator = Collections.reverseOrder();
+
+        // Appel de la méthode en spécifiant les types
+        Collections.sort(stringList, reverseComparator);
+
+        // Affichage de la liste triée
+        System.out.println("Liste triée : " + stringList);
+    }
+
+
