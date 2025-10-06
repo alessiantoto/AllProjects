@@ -1,0 +1,123 @@
+classDiagram
+    Facade --|> Batch
+    Batch --|> Serie
+    Serie --|> Item
+    Batch --|> StartThread
+    StartThread --|> OcrScanner
+    Checkup --|> ExtractStrategy
+    OcrScanner --> Checkup
+    Facade --|> CalStat
+    ManageFile --> Serie
+    ManageFile --> Batch
+    ExtractStrategy <|.. ExtractWithAI
+    ExtractStrategy <|.. ExtractWithRegex
+
+    class Facade {
+        - Batch batch
+        - Connection connection
+        - TicketRepository ticketRepository
+        - int salary
+        - ArrayList~Observer~ observers
+
+        + Facade(Connection, TicketRepository)
+        + TicketRepository getTicketRepository()
+        + void startScanThread(int, String)
+        + void startCalc()
+        + void addObserver(Observer)
+        + void removeObserver(Observer)
+        + void notifyObservers(UpdateStep)
+    }
+
+    class Batch {
+        + static final int NUMBER_OF_IMAGES
+        - int numberOfSeries
+        - ScanThread[] listOfScanThread
+        - Serie[] series
+        - ManageFile manageFile
+        - Facade facade
+
+        + Batch(Facade, String)
+        - void setSeries()
+        - void createAndStartThread()
+    }
+
+    class Serie {
+        - int nbFiles
+        - Item[] files
+    }
+
+    class Item {
+        - File file
+        - String content
+
+        + Item(File, String)
+        + Item(File)
+        + Item(String)
+        + File getFile()
+        + String getContent()
+        + void setContent(String)
+    }
+
+    class Checkup {
+        - TicketRepository ticketRepository
+        - void addTicketDTOToDataBase()
+    }
+
+    class CalStat {
+    }
+
+    class ManageFile {
+        - String stringPath
+        - Path pathToFolder
+
+        + ManageFile(String)
+        + File[] getAllImages()
+        - void verifyIfPathIsFolder()
+        - void setPathToFolder()
+    }
+
+    class OcrScanner {
+        - Facade facade
+        - Tesseract tesseract
+        - Serie serie
+
+        + OcrScanner(Facade, Serie)
+        - void initTesseract()
+        - void startScanning()
+        - String scan(File)
+    }
+
+    class ExtractStrategy {
+        <<interface>>
+        + Double extractPrice()
+        + String extractShop()
+        + LocalDate extractDate()
+    }
+
+    class ExtractWithRegex {
+        + Double extractPrice()
+        + String extractShop()
+        + LocalDate extractDate()
+    }
+
+    class ExtractWithAI {
+        + Double extractPrice()
+        + String extractShop()
+        + LocalDate extractDate()
+    }
+
+    class StartThread {
+        - Serie serie
+        - OcrScanner ocrScanner
+        - Facade facade
+        - String[] content
+
+        + ScanThread(Facade, Serie)
+        + void run()
+    }
+
+    class Strategy {
+        <<enumeration>>
+        REGEX
+        AI
+    }

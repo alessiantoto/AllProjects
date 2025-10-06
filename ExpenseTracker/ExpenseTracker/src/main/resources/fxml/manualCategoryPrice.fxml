@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="root-pane, content-container"
+  xmlns="http://javafx.com/javafx/21"
+  xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.esi.prj.view.ManualCategoryPriceController">
+  <padding>
+    <Insets bottom="20" left="20" right="20" top="20" />
+  </padding>
+
+  <ImageView fx:id="itemImageView" fitWidth="400" fitHeight="400" preserveRatio="true"
+    styleClass="image-view-container">
+    <image>
+    </image>
+  </ImageView>
+
+  <Label text="Veuillez entrer le prix du ticket et sélectionner la catégorie :"
+    styleClass="subtitle-label" />
+
+  <HBox alignment="CENTER" spacing="10">
+    <Label text="Prix :" styleClass="input-label" />
+    <TextField fx:id="priceParameter" promptText="ex: 12.34" prefWidth="200"
+      styleClass="text-input" />
+  </HBox>
+
+  <HBox alignment="CENTER" spacing="10">
+    <Label text="Catégorie :" styleClass="input-label" />
+    <ComboBox fx:id="categoryParameter" promptText="Choisissez une catégorie" prefWidth="200"
+      styleClass="combo-box" />
+  </HBox>
+
+
+  <Button fx:id="validatePriceButton" text="Valider" onAction="#handleValidatePriceButtonAction"
+    styleClass="primary-button" />
+
+
+  <Label fx:id="errorLabel" textFill="red" style="-fx-font-size: 12px;" visible="false"
+    managed="false" />
+
+</VBox>
