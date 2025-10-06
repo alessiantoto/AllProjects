@@ -1,0 +1,12 @@
+Model\WeatherException.class
+Model\Model.class
+View\MainView.class
+Controller\Controller.class
+Model\Observer.class
+View\Images.class
+Model\WeatherApi.class
+Model\Observable.class
+View\InputView.class
+Model\WeatherApi$WeatherObject.class
+View\WeatherView.class
+MeteoApp.class
