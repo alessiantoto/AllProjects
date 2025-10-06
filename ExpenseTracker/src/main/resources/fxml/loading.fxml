@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane alignment="CENTER" styleClass="root-pane, content-container"
+  xmlns="http://javafx.com/javafx/21"
+  xmlns:fx="http://javafx.com/fxml/1">
+  <padding>
+    <Insets bottom="30" left="30" right="30" top="30" />
+  </padding>
+
+  <VBox alignment="CENTER" spacing="20">
+    <ProgressIndicator fx:id="loadingIndicator" styleClass="progress-indicator" prefHeight="50"
+      prefWidth="50" />
+  </VBox>
+
+</StackPane>

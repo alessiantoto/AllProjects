@@ -1,0 +1,200 @@
+.delete-button {
+  -fx-background-color: #e74c3c;
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-background-radius: 5;
+}
+
+.root-pane {
+  -fx-background-color: #f8f9fa;
+  -fx-padding: 20px;
+  -fx-font-family: "Roboto", "Arial", sans-serif;
+  -fx-font-size: 14px;
+  -fx-text-fill: #202124;
+}
+
+.content-container {
+  -fx-spacing: 15px;
+  -fx-padding: 20px;
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 8px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);
+  -fx-border-color: #e0e0e0;
+  -fx-border-width: 1px;
+  -fx-border-radius: 8px;
+}
+
+.title-label {
+  -fx-text-fill: #202124;
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+  -fx-padding: 0 0 10px 0;
+}
+
+.subtitle-label {
+  -fx-text-fill: #5f6368;
+  -fx-font-size: 14px;
+  -fx-padding: 0 0 15px 0;
+}
+
+.input-label {
+  -fx-text-fill: #5f6368;
+  -fx-font-size: 14px;
+}
+
+.text-input,
+.combo-box {
+  -fx-background-color: #ffffff;
+  -fx-text-fill: #202124;
+  -fx-prompt-text-fill: #80868b;
+  -fx-border-color: #dadce0;
+  -fx-border-width: 1px;
+  -fx-border-radius: 4px;
+  -fx-background-radius: 4px;
+  -fx-padding: 8px 12px;
+  -fx-font-size: 14px;
+}
+
+.text-input:focused,
+.combo-box:focused {
+  -fx-border-color: #4285f4;
+  -fx-effect: dropshadow(gaussian, rgba(66, 133, 244, 0.3), 8, 0, 0, 0);
+}
+
+.combo-box > .arrow-button {
+  -fx-padding: 0 8px 0 8px;
+  -fx-background-color: transparent;
+}
+
+.combo-box > .arrow-button > .arrow {
+  -fx-background-color: #5f6368;
+}
+
+.combo-box .list-cell {
+  -fx-padding: 8px 12px;
+  -fx-background-color: #ffffff;
+  -fx-text-fill: #202124;
+}
+
+.combo-box .list-cell:filled:selected,
+.combo-box .list-cell:filled:selected:hover {
+  -fx-background-color: #e8f0fe;
+  -fx-text-fill: #202124;
+}
+
+.combo-box .list-cell:filled:hover {
+  -fx-background-color: #f1f3f4;
+  -fx-text-fill: #202124;
+}
+
+.button {
+  -fx-background-color: #f8f9fa;
+  -fx-text-fill: #3c4043;
+  -fx-font-size: 14px;
+  -fx-padding: 8px 16px;
+  -fx-border-radius: 4px;
+  -fx-background-radius: 4px;
+  -fx-cursor: hand;
+  -fx-border-color: #dadce0;
+  -fx-border-width: 1px;
+}
+
+.button:hover {
+  -fx-background-color: #f1f3f4;
+  -fx-border-color: #d2d4d7;
+}
+
+.button:pressed {
+  -fx-background-color: #e8eaed;
+  -fx-border-color: #c6c8cb;
+}
+
+.primary-button {
+  -fx-background-color: #4285f4;
+  -fx-fill: #4285f4;
+  -fx-text-fill: #ffffff;
+  -fx-font-size: 15px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 24px;
+  -fx-border-radius: 4px;
+  -fx-background-radius: 4px;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(66, 133, 244, 0.3), 8, 0, 0, 4);
+}
+
+/* Styles pour les boutons primaires au survol */
+.primary-button:hover {
+  -fx-background-color: #357ae8;
+  -fx-effect: dropshadow(gaussian, rgba(66, 133, 244, 0.4), 10, 0, 0, 5);
+}
+
+.primary-button:pressed {
+  -fx-background-color: #2a65c1;
+  -fx-effect: none;
+}
+
+.image-view-container {
+  -fx-padding: 5px;
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 4px;
+  -fx-border-color: #dadce0;
+  -fx-border-width: 1px;
+  -fx-border-radius: 4px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0, 0, 2);
+}
+
+.expense-bar {
+  -fx-background-color: #34a853;
+  -fx-fill: #34a853;
+  -fx-arc-width: 4;
+  -fx-arc-height: 4;
+}
+
+.expense-label {
+  -fx-text-fill: #202124;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}
+
+.total-label {
+  -fx-text-fill: #202124;
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+  -fx-padding: 15px 0 0 0;
+}
+
+.progress-indicator {
+  -fx-progress-color: #4285f4;
+}
+
+/* Styles pour le graphique */
+.bar-chart {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e0e0e0;
+  -fx-border-width: 1px;
+  -fx-border-radius: 8px;
+  -fx-padding: 10px;
+}
+
+.bar-chart .chart-title {
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #202124;
+}
+
+.bar-chart .axis-label {
+  -fx-font-size: 14px;
+  -fx-text-fill: #5f6368;
+}
+
+.bar-chart .axis {
+  -fx-tick-label-fill: #5f6368;
+}
+
+.bar-chart .chart-plot-background {
+  -fx-background-color: #ffffff;
+}
+
+.bar-chart .chart-series-bar {
+  -fx-bar-fill: #4285f4;
+}
