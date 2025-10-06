@@ -1,0 +1,16 @@
+## **Rapports des équipes**
+	- [[E12 : REPORTINGS]]
+	- [[E12 : REPORTINGS_SUPERVISEUR]]
+-
+- ## **Rapports des réunions**
+	- >Contient les rapports des séances
+	-
+	- [[E12 : REPORTINGS_REUNION]]
+-
+- ## **Documents officiel**
+	- > C’est votre rapport, mais certaines parties sont filtrées. Il doit servir de tutoriel pour les futurs départements qui utiliseront notre Logseq. Il contient donc principalement la théorie et la pratique.
+	-
+	- [[E12 : PROJECT_DOCUMENTATION]]
+-
+- ## **Documents préparatif aux séances**
+	- [[E12 : PREPA SEANCE 6]]

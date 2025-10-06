@@ -1,0 +1,44 @@
+stages:           # Définition des stages du pipeline
+  - build
+  - deploy
+  - shutdown      # Ajout du stage "shutdown"
+
+build:  # Début de l'étape de construction
+  image: ubuntu:latest   # Utilise une image Ubuntu avec apt-get disponible
+  stage: build  
+  script:  
+    - apt update 
+    - apt-get install -y vagrant 
+    - ssh-agent -k || true  
+    - vagrant up --provision 
+  tags:
+    - local
+    - shutdown
+  only:  
+    - main  
+
+deploy:  
+  stage: deploy  
+  tags:
+    - local
+    - shutdown
+  script:  
+    - mkdir .public  
+    - cp -r ./export/* .public  
+    - mv .public public  
+    - ansible-playbook playbook.yml  
+  artifacts:  
+    paths:
+      - public/  
+  only:  
+    - main  
+
+shutdown:  
+  stage: shutdown 
+  tags:
+    - local
+    - shutdown
+  script: 
+    - ansible-playbook -i inventory shutdown_hetzner_ssh.yml  # Exécute le playbook pour arrêter le serveur Hetzner
+  only: 
+    - main  

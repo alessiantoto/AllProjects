@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+  # Définir la box à utiliser
+  config.vm.box = "ubuntu/bionic64"
+
+  # Provisionnement via script shell pour installer Ansible dans la VM
+  config.vm.provision "shell", inline: <<-SHELL
+    apt update
+    apt install -y python3-pip
+    apt install -y ansible
+  SHELL
+
+  # Utilisation d'Ansible à l'intérieur de la VM (ansible_local)
+  config.vm.provision "ansible_local" do |ansible|
+    # Spécifier le nom du playbook Ansible
+    ansible.playbook = "playbook.yml"
+
+    # Spécifier l'inventaire pour Ansible
+    ansible.inventory_path = "inventory"
+
+    # Spécifier l'interpréteur Python pour Ansible
+    ansible.extra_vars = {
+      ansible_python_interpreter: "/usr/bin/python3"
+    }
+
+    # Activer 'become' pour utiliser les privilèges administrateur dans Ansible
+    ansible.become = true
+  end
+end
