@@ -1,0 +1,22 @@
+QUESTION 1
+
+
+Lorsque vous appuyez sur le bouton "Insert," différents gestionnaires d'événements réagissent à l'événement de clic de la souris à plusieurs niveaux de l'interface utilisateur, de la fenêtre principale à l'intérieur du bouton "Insert." Le gestionnaire "Insert Button Handler" est spécifiquement associé au bouton "Insert" et réagit lorsque l'événement atteint ce bouton. C'est pourquoi vous voyez "Insert Button Handler" dans les messages, car ce gestionnaire est chargé de gérer l'événement de clic de la souris au niveau du bouton "Insert."
+
+
+
+QUESTION 2
+
+1.
+Avec ce code, lorsque l'utilisateur tape du texte dans le TextField tfdText, l'événement KEY_TYPED sera consommé (ignoré), ce qui signifie que le texte ne sera pas saisi dans le TextField. Cela peut être utile si vous souhaitez désactiver la saisie de texte dans ce champ.
+
+2.
+
+tfdText.addEventFilter(KeyEvent.KEY_TYPED, event -> {
+    String character = event.getCharacter();
+    if (!character.matches("[0-9]")) {
+        event.consume();
+    }
+});
+
+

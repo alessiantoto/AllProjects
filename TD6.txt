@@ -1,0 +1,131 @@
+QUESTION 1
+3,4,6,7,8,9,11
+
+
+QUESTION 2
+
+
+1. IntPredicate
+
+public class AgePredicateExample {
+    public static void main(String[] args) {
+        // Creation personne
+        Person person = new Person("John Doe", 25);
+
+        // Utilisation de IntPredicate pour verifier si age est supérieur à 18
+        IntPredicate isAdult = age -> age > 18;
+
+        // Vérification age personne
+        if (isAdult.test(person.getAge())) {
+            System.out.println(person.getName() + " est un adulte.");
+        } else {
+            System.out.println(person.getName() + " n'est pas encore un adulte.");
+        }
+    }
+}
+
+
+
+2. BiPredicate<T,U>
+
+
+public class GenderAndAgePredicateExample {
+    public static void main(String[] args) {
+        // Création personne
+        Person person = new Person("Jane Doe", 22, "female");
+
+        // Utilisation de BiPredicate pour vérifier si femme majeure
+        BiPredicate<String, Integer> isAdultFemale = (gender, age) -> 	gender.equalsIgnoreCase("female") && age >= 18;
+
+        // Verification du genre et de l'age de la personne
+        if (isAdultFemale.test(person.getGender(), person.getAge())) {
+            System.out.println(person.getName() + " est une femme majeure.");
+        } else {
+            System.out.println(person.getName() + " n'est pas une femme majeure.");
+        }
+    }
+}
+
+
+
+3. DoubleConsumer
+
+public class CircleAreaConsumerExample {
+    public static void main(String[] args) {
+        // Création cercle
+        Circle circle = new Circle(5.0);
+
+        // Utilisation de DoubleConsumer pour imprimer la surface du cercle
+        DoubleConsumer printArea = area -> System.out.println("Surface du cercle : " + 	area);
+
+        // Calcul de la surface et utilisation de DoubleConsumer
+        double area = circle.calculateArea();
+        printArea.accept(area);
+    }
+}
+
+
+4. ToIntFunction<T>
+
+public class RectangleWidthFunctionExample {
+    public static void main(String[] args) {
+        // Creation rectangle
+        Rectangle rectangle = new Rectangle(10, 5);
+
+        // Utilisation de ToIntFunction pour obtenir la largeur du rectangle en tant 	qu'entier
+        ToIntFunction<Rectangle> getWidthFunction = Rectangle::getWidth;
+
+        // Obtention de la largeur en utilisant ToIntFunction
+        int width = getWidthFunction.applyAsInt(rectangle);
+
+        // Affichage de la largeur
+        System.out.println("Largeur du rectangle : " + width);
+    }
+}
+
+
+
+5. DoubleFunction<T>
+
+
+public class CircleRadiusFunctionExample {
+    public static void main(String[] args) {
+        // Création d'un cercle
+        Circle circle = new Circle(7.5);
+
+        // Utilisation de DoubleFunction pour obtenir la description du rayon du cercle
+        DoubleFunction<String> getRadiusDescriptionFunction = radius -> {
+            Circle c = new Circle(radius);
+            return c.getRadiusDescription();
+        };
+
+        // Obtenir la description du rayon en utilisant DoubleFunction
+        String radiusDescription = getRadiusDescriptionFunction.apply(7.5);
+
+        // Affichage de la description du rayon
+        System.out.println(radiusDescription);
+    }
+}
+
+
+
+6. IntToDoubleFunction
+
+
+public class RectangleWidthConversionExample {
+    public static void main(String[] args) {
+        // Création d'un rectangle
+        Rectangle rectangle = new Rectangle(10);
+
+        // Utilisation de IntToDoubleFunction pour convertir la largeur du rectangle en 	double
+        IntToDoubleFunction widthToDoubleFunction = width -> width;
+
+        // Conversion de la largeur en utilisant IntToDoubleFunction
+        double doubleWidth = widthToDoubleFunction.applyAsDouble(rectangle.getWidth());
+
+        // Affichage de la largeur convertie en double
+        System.out.println("Largeur du rectangle en double : " + doubleWidth);
+    }
+}
+
+
