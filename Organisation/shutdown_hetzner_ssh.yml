@@ -1,0 +1,6 @@
+- name: Arrêter le serveur Hetzner
+  hosts: hetzner_servers
+  tasks:
+    - name: Éteindre le serveur
+      ansible.builtin.command: "shutdown now"
+      become: true

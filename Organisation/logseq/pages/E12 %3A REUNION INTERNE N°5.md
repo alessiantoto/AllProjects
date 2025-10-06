@@ -1,0 +1,45 @@
+## OBJECTIFS DE LA REUNION
+	- > **Document de mise en place préparatoire pour les réunions avec le prof**
+		- -> Début et fin de la séance avec le prof préparé à l'avance
+		- -> Présentation des références et application de celle-ci, 5 minutes max par groupe.
+		- -> Présentation du travail de chaque équipe, des problématiques, des solutions, des recherches.
+		- -> Interview avec le client.
+		- -> feedback du professeur
+	- > **Mettre en place les objectifs via des issues sur git pour le projet local, mise en place des label (issue bloqué)**
+	- > **Toute l'équipe gère les issue et leur objectifs**
+	- > **Mise en place des présentation pour les références**
+		- **-> Titre / Sujet de la référence**
+			- Expliquez pourquoi vous l'avez choisie, et cela vis à vis de notre organisation et du projet du client ou d'un défit/problématique que vous faite fasse
+		- **-> Introduire le concept**
+			- Expliquer c'est quoi cette référence, comment ça fonctionne, etc.. la théorie pure, vous pouvez utilisé des schémas, image, etc..
+		- **-> Application au Projet**
+			- Décrivez comment cette référence peut être appliquée à votre projet actuel.
+			- Par exemple, si la référence concerne les pratiques CI/CD, expliquez comment vous implémenteriez le CI/CD dans votre projet, quels outils vous utiliseriez (par exemple, Jenkins, GitLab CI) et quels défis vous attendez.
+		- **-> Comparaison **
+			- Comparez la référence avec d'autres méthodologies.
+			- Comparez les avantages et inconvénient.
+		- **-> Résume les points clés**
+	- > **Responsable logseq (rapport) pour chaque équipe**
+	- > **Désigné un deuxième scribe**
+	- > **Commencez réellement le projet**
+		- Stratégie **full self learning**
+		- -> Vous crée votre groupe (ou vous êtes seule) -> (1,2,3,4..) personnes max de préférence
+		- -> Vous crée votre dépôt personnel
+		- -> Vous appliquer le projet client pour votre groupe
+		- -> Vous êtes donc tous responsable de la sécurité, de l'infrastructure, de l'automatisation
+		- -> Finalement, tout les idées et projet de chacun vont être rassembler sur le projet global local
+		- -> Pourquoi faire cela ?
+			- -> Cassez la barrière des connaissances
+			- -> Peut-être que ceci est une meilleur approche que devoir le faire sur un groupe de +15 personnes
+			- -> Avancer vite
+	- > **Formulaire hebdomadaire**
+		- -> Question hebdomadaire
+- ## PV REUNION
+-
+	- -> Rassemblement pour la création du projet client tous ensemble durant une soirée
+	- -> Runner établie
+	-
+	- **Securité**
+		- Check automatisation si les port / serveur est bien fermer.
+		- Check les personnes qui vont accéder au serveur, etc..
+		- Accès superviseur au serveur

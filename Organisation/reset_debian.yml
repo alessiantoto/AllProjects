@@ -1,0 +1,103 @@
+---
+- name: Reset and Configure Debian Server
+  hosts: hetzner_servers  # Défini dans le fichier inventory d'Ansible
+  become: yes  # Utilise sudo pour les privilèges administratifs
+  vars:
+    # Génère un mot de passe aléatoire Diceware (12 caractères en lettres ASCII)
+    diceware_password: "{{ lookup('password', '/dev/null length=12 chars=ascii_letters') }}"
+
+  tasks:
+    - name: Generate a new Diceware password
+      debug:
+        msg: "New server password: {{ diceware_password }}"
+
+    - name: Update and upgrade the system
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: dist
+        autoclean: yes
+
+    - name: Install necessary packages
+      ansible.builtin.apt:
+        name:
+          - sudo
+          - ufw
+          - curl
+          - gnupg
+          - apt-transport-https
+          - software-properties-common
+          - fail2ban
+          - docker.io
+        state: present
+
+    - name: Add user with generated password
+      ansible.builtin.user:
+        name: devuser  # Nom d'utilisateur (ajustez si nécessaire)
+        password: "{{ diceware_password | password_hash('sha512') }}"  # Mot de passe sécurisé
+        shell: /bin/bash
+
+    - name: Create .ssh directory for devuser
+      ansible.builtin.file:
+        path: /home/devuser/.ssh
+        state: directory
+        owner: devuser
+        group: devuser
+        mode: '0700'
+
+    - name: Add SSH keys for access
+      ansible.builtin.copy:
+        src: files/authorized_keys
+        dest: /home/devuser/.ssh/authorized_keys
+        owner: devuser
+        mode: '0600'
+
+    - name: Install OpenSSH server
+      ansible.builtin.apt:
+        name: openssh-server
+        state: present
+    - name: Harden SSH configuration
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "{{ item }}"
+        create: yes  # Cette option crée le fichier si nécessaire
+      loop:
+        - "PermitRootLogin no"
+        - "PasswordAuthentication no"
+        - "AllowUsers devuser"
+
+
+    - name: Harden SSH configuration
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "{{ item }}"
+      loop:
+        - "PermitRootLogin no"
+        - "PasswordAuthentication no"
+        - "AllowUsers devuser"
+
+    - name: Enable and configure firewall (UFW)
+      ansible.builtin.ufw:
+        rule: allow
+        name: OpenSSH
+        state: enabled
+
+    - name: Enable Docker service
+      ansible.builtin.systemd:
+        name: docker
+        enabled: true
+        state: started
+
+    - name: Apply basic CIS hardening
+      blockinfile:
+        path: /etc/sysctl.conf
+        marker: "# {mark} CIS hardening"
+        block: |
+          net.ipv4.ip_forward = 0
+          net.ipv4.conf.all.send_redirects = 0
+          net.ipv4.conf.default.send_redirects = 0
+      notify: restart sysctl
+
+  handlers:
+    - name: restart sysctl
+      ansible.builtin.command: sysctl -p
+      

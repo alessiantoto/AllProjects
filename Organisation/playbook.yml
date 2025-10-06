@@ -1,0 +1,29 @@
+---
+  - hosts: all
+    become: yes
+    tasks:
+      - name: Mettre à jour les paquets
+        apt:
+          update_cache: yes
+  
+      - name: Installer Apache
+        apt:
+          name: apache2
+          state: present
+  
+      - name: Installer Python 3
+        apt:
+          name: python3
+          state: present
+  
+      - name: Installer Git
+        apt:
+          name: git
+          state: present
+  
+      - name: Add SSH keys for access
+        ansible.builtin.copy:
+          src: files/authorized_keys
+          dest: ~/.ssh/authorized_keys
+          owner: alessian  # Remplace par l’utilisateur distant, ex: "ubuntu"
+          mode: '0600'

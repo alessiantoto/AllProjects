@@ -1,0 +1,56 @@
+stages:
+  - deploy
+
+deploy_nginx:
+  stage: deploy
+  script:
+    # Téléchargement et installation de Nginx
+    - echo "Téléchargement de Nginx"
+    - powershell -Command "Invoke-WebRequest -Uri 'http://nginx.org/download/nginx-1.24.0.zip' -OutFile 'nginx.zip'"
+    - echo "Extraction de Nginx"
+    - powershell -Command "Expand-Archive -Path 'nginx.zip' -DestinationPath 'C:\\nginx'"
+
+    # Configuration de Nginx
+    - echo "Configuration de Nginx"
+    - powershell -Command "Set-Content -Path 'C:\\nginx\\nginx-1.24.0\\conf\\nginx.conf' -Value @'
+      worker_processes  1;
+      events {
+          worker_connections  1024;
+      }
+      http {
+          server {
+              listen       80;
+              server_name  localhost;
+              location / {
+                  return 200 'Nginx fonctionne !';
+                  add_header Content-Type text/plain;
+              }
+          }
+      }
+      '@ -Encoding UTF8"
+
+    # Démarrage de Nginx
+    - echo "Démarrage de Nginx"
+    - powershell -Command "Start-Process -FilePath 'C:\\nginx\\nginx-1.24.0\\nginx.exe' -NoNewWindow"
+
+    # Attente pour permettre à Nginx de démarrer
+    - echo "Vérification si Nginx est actif"
+    - powershell -Command "Start-Sleep -Seconds 5"
+
+    # Vérification que Nginx fonctionne correctement
+    - echo "Test de Nginx"
+    - |
+      powershell -Command "
+      try {
+        $response = Invoke-WebRequest -Uri 'http://localhost' -UseBasicParsing;
+        if ($response.StatusCode -eq 200) {
+          Write-Output 'Nginx fonctionne !';
+        } else {
+          Write-Output 'Erreur : Nginx ne répond pas correctement !';
+        }
+      } catch {
+        Write-Output 'Erreur : Impossible de se connecter à Nginx !';
+      }"
+  tags:
+    - local
+
