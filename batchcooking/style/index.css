@@ -1,0 +1,54 @@
+.cacher{
+    display:none;
+}
+#container-cards{
+    overflow-y: scroll;
+    max-height: 100%;
+}
+
+.listeTags{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.listeTags li{
+    display:inline;
+    border:medium solid rgb(67, 7, 2);
+    border-radius: 10px 30px;
+    font-style: italic;
+}
+
+.starches{
+    background-color: red;
+}
+.proteins{
+    background-color: green;
+}
+.vegetables{
+    background-color: yellowgreen;
+}
+
+.selected{
+    background-color: violet;
+}
+.listeLundi{
+    list-style-type: none;
+
+}
+.listeLundi li{
+    list-style-type: none;
+}
+
+
+.title:hover,
+.title li:focus {
+  background-color: #4b0404;
+}
+.menu:hover,
+.menu:focus {
+    background-color: #f17575; 
+}
+
+.isInPlanning{
+    background-color: #4b0404;
+}

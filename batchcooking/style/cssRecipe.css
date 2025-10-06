@@ -1,0 +1,116 @@
+header{
+    text-align: center;
+    background-color: rgb(179, 59, 43);
+    border-style:solid;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 10px 30px;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#recipe-container{
+    width:100vw;
+    height:100vh;
+    font-family:'Quicksand',sans-serif;
+    font-weight: bold;
+    font-size:20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  1fr 1fr;
+    gap:10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-items: center;
+}
+#recipe-container div{
+
+    border:1px solid #000000;
+    text-align: center;
+    background-color: #790101;
+    width:100%;
+}
+#recipe-container div img{
+    height: 100%;
+    width:100%;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: rgb(82, 20, 20);
+}
+.buttonRecipe {
+  background: #c64540;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  transition-property: top, box-shadow, transform;
+    transition-duration: 0.2s, 0.2s, 1s;
+}
+
+.buttonRecipe:hover,
+.buttonRecipe:focus {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+.buttonRecipe:active {
+    transform: rotateX(360deg);
+    transition-property: none;
+}
+
+.buttonRecipe {
+  opacity: .5;
+  
+}
+.etapes,
+.imageRecette{
+    border-radius: 10%;
+}
+.ingredients{
+    border-radius: 20%;
+}
+body{
+    background-image: url(img/calendrierFond.jpg);
+    object-fit: cover;
+}
+#recipe-container div h3{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#recipe-container div ul li,
+#recipe-container div ol li{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.fourthDivButton{
+    border-radius: 100%;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+
+}
+.etapes{
+    height: 100%;
+}
+.etapes{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 500px;
+}

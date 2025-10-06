@@ -1,0 +1,50 @@
+#container-calendrier{
+    display: flex;
+    max-inline-size: 100%;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction:row;
+    flex-flow: wrap;
+    
+}
+.jour{
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+    height: 300px;
+    border:3px solid #0000;
+    background-color: rgb(189, 92, 92);
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+header{
+    text-align: center;
+    background-color: rgb(179, 59, 43);
+    border-style:solid;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 10px 30px;
+}
+.title{
+    height: 10%;
+    background-color: rgb(133, 14, 14);
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: url(img/calendrierFond.jpg);
+    object-fit: cover;
+}
+.title:hover,
+.title:focus {
+  background-color: #4b0404;
+}
+.contenu p:hover,
+.contenu:focus {
+    background-color: #f17575; 
+}
+.menu{
+    background-color: #a20808;
+    border-radius: 10%;
+}

@@ -1,0 +1,47 @@
+header{
+    text-align: center;
+    background-color: rgb(179, 59, 43);
+    border-style:solid;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 10px 30px;
+}
+body{
+    background-image: url(img/calendrierFond.jpg);
+    object-fit: cover;
+}
+#list-container{
+    display: flex;
+    justify-content: center;
+
+}
+.listeJours{
+    background-color: antiquewhite;
+    height: fit-content;
+    width: 700px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-flow: wrap;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 10%;
+    }
+.jours{
+    height: 220px;
+    width:150px;
+    border:5px solid #0000;
+    float:left;
+    margin:5px;
+}
+.jours h3{
+    color: #f10404; font-family: 'Julius Sans One', sans-serif; font-size: 22px; font-weight: bold; line-height: 32px; margin: 0 0 24px; text-shadow: 1px 1px 1px #082b34; 
+}
+.jours li{
+    color: #550303; font-family: 'Carme', sans-serif; 
+    font-style: italic;
+}
+li::marker {
+    color: #f10404;
+    content: "-"
+  }
+  

@@ -1,0 +1,196 @@
+header{
+    text-align: center;
+    background-color: rgb(179, 59, 43);
+    border-style:solid;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 10px 30px;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+#container-cards{
+   
+    font-family:'Quicksand',sans-serif;
+    font-weight: bold;
+    font-size:20px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-flow: wrap;
+    gap:10px;
+    box-sizing: border-box;
+    padding:10px;
+    height: fit-content;
+}
+#container-cards div{
+    padding:10px;
+    border:5px solid #000000;
+    border-radius: 10px 30px;
+    height: 1000px;
+    width: 400px;
+
+}
+#container-cards div img{
+    width: 1fr 1fr 1fr;
+    height: 40%;
+    width:100%;
+    border-style:solid;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 10px 30px;
+    object-fit: cover;
+}
+p button{
+    width: 100%;
+}
+h4{
+    text-align: center;
+    color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 60px; line-height: 60px; font-weight: normal; margin-bottom: 0px; margin-top: 20px; text-align: center; text-shadow: 0 1px 1px #fff;
+}
+.buttonCartes{
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonCartes:hover,
+.buttonCartes:focus {
+  background-color: #F082AC;
+}
+.buttonSelectioner {
+  background: #e62143;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 10px;
+  padding: .8em 1em;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+  text-underline-offset: 1px;
+  transition: all .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  word-break: break-word;
+  border: 0;
+}
+
+.buttonSelectioner:active,
+.buttonSelectioner:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
+}
+
+.buttonSelectioner:hover {
+  border-bottom-style: none;
+  border-color: #dadada;
+}
+
+#container-cards div{
+    position: relative;
+}
+.tag1{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px 30px;
+    font-style: italic;
+
+}
+.tag1#carbo{
+  border:medium solid rgb(8, 67, 2);
+  background-color: #c8ee3f;
+}
+.tag1#protein{
+  border:medium solid rgb(8, 67, 2);
+  background-color: #049a1a;
+}
+.tag1#graisse{
+  border:medium solid rgb(67, 7, 2);
+  background-color: #c70e08;
+}
+.tag2{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    border-radius: 20px 30px 20px 30px;
+    font-style: italic;
+}
+.tag2#carbo{
+  border:medium solid rgb(8, 67, 2);
+  background-color: #c8ee3f;
+}
+.tag2#protein{
+  border:medium solid rgb(8, 67, 2);
+  background-color: #049a1a;
+}
+.tag2#graisse{
+  border:medium solid rgb(67, 7, 2);
+  background-color: #c70e08;
+}
+
+.tag3{
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+  border-radius: 20px 30px 20px 30px;
+  font-style: italic;
+}
+
+.tag3#carbo{
+  border:medium solid rgb(8, 67, 2);
+  background-color: #c8ee3f;
+}
+.tag3#protein{
+  border:medium solid rgb(8, 67, 2);
+  background-color: #049a1a;
+}
+.tag3#graisse{
+  border:medium solid rgb(67, 7, 2);
+  background-color: #c70e08;
+}
+
+.graisse{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border:medium solid rgb(57, 9, 2);
+    border-radius: 20px 30px 20px 30px;
+    font-style: italic;
+    background-color: #e62143;
+}
+body{
+  background-image: url(img/calendrierFond.jpg);
+  object-fit: cover;
+}

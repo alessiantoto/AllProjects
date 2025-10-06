@@ -1,0 +1,60 @@
+
+
+#container-planing{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+    gap:1%;
+    
+}
+.container-cards{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+
+#container-planing div button{
+    height: 100%;
+    width: 100%;
+}
+.shoppingList-planing,
+.buttonShopping{
+        background:none;
+        border-radius: 11px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+        font-size: 1.15em;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 10px;
+        padding: .8em 1em;
+        text-align: center;
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+        text-underline-offset: 1px;
+        transition: all .2s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+        word-break: break-word;
+        border: 0;
+}
+.shoppingList-planing img{
+    border-radius: 20%;
+}
+
+
+.buttonShopping:active,
+.buttonShopping:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
+}
+
+
